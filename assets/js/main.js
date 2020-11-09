@@ -1,10 +1,10 @@
 // Your web app's Firebase configuration
  var firebaseConfig = {
   apiKey: "AIzaSyDw2j6VdL-OKmT6UOcRDoH6uLZldq2TwWw",
-  authDomain: "janah-72c76.firebaseapp.com",
-  databaseURL: "https://janah-72c76.firebaseio.com",
-  projectId: "janah-72c76",
-  storageBucket: "janah-72c76.appspot.com",
+  authDomain: "LOGISTA-72c76.firebaseapp.com",
+  databaseURL: "https://LOGISTA-72c76.firebaseio.com",
+  projectId: "LOGISTA-72c76",
+  storageBucket: "LOGISTA-72c76.appspot.com",
   messagingSenderId: "258029815815",
   appId: "1:258029815815:web:8518e9d15ebb7bf05442a2",
   measurementId: "G-NHXS9RGMVF"
