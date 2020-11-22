@@ -479,22 +479,36 @@ const openTaskDetails = () => {
 			const taskDetailsDriverBefore = task.deliver.date;
 			const taskDetailsDriverOrderId = task.deliver.orderId;
 			const taskDetailsDriverAddress = task.deliver.address.name;
-			const orderItems= JSON.parse(taskDetailsDriverDescription);
+			let orderItems;
+			console.log(task.orderItems)
+			if(typeof task.orderItems !=="undefined")
+			{
+				 orderItems= JSON.parse(taskDetailsDriverDescription);
+
+			}
+			else
+			{
+				 orderItems=0
+			}
 			var content = '';
 
 			// const taskDetailsDriverAddressLng = task.deliver.address.lng;
 			// const taskDetailsDriverAddressLat = task.deliver.address.lat;
-			for (i = 0; i < orderItems.length; i++) {
+			if(typeof task.orderItems !=="undefined")
+			{
+				for (i = 0; i < orderItems.length; i++) {
 			
-				content += '<div> <p> <b>Product Info</b></b>';
-				content += '<p> <b>Id</b></b>:' + orderItems[i].id + '</p><br>'; 
-				content += '<p> <b>Name</b></b>:' + orderItems[i].name + '</p> <br>'; 
-				content += '<p> <b>Price</b>'  + orderItems[i].price + '</p> <br>'; 
-				content += '<p> <b>Quantity</b>' + orderItems[i].quantity + '</p> <br>'; 
-				
-
-				content += '</div>';
-			  }
+					content += '<div> <p> <b>Product Info</b></b>';
+					content += '<p> <b>Id</b></b>:' + orderItems[i].id + '</p><br>'; 
+					content += '<p> <b>Name</b></b>:' + orderItems[i].name + '</p> <br>'; 
+					content += '<p> <b>Price</b>'  + orderItems[i].price + '</p> <br>'; 
+					content += '<p> <b>Quantity</b>' + orderItems[i].quantity + '</p> <br>'; 
+					
+	
+					content += '</div>';
+				  }
+			}
+	
 			
 			return `<div class="taskDetails_header">
 						<h3 class="taskDetails_haeder">Task details</h3>
@@ -523,7 +537,7 @@ const openTaskDetails = () => {
 							<p><b>deliver address</b>: ${taskDetailsDriverAddress}</p>
 						</div>
 						<div>
-						<a href="show_orders.html#${taskId}"><h3 >Show Order Items</h3></a>
+						<a href="show-orders.html?id=${taskId}"><h3 >Show Order Items</h3></a>
 						</div>
 						</div>
 					
